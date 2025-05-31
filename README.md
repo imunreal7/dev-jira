@@ -24,7 +24,7 @@ DevJira is a modern, customizable Kanban-style task management web application b
 
 ## Demo Screenshot
 
-![DevJira Screenshot](./screenshot.png)
+![DevJira Screenshot](public/screenshot.png)
 
 ## Installation
 
