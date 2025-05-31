@@ -1,10 +1,18 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export const TaskContext = createContext();
 
 export const TaskProvider = ({ children }) => {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(() => {
+        const storedTasks = localStorage.getItem("tasks");
+        return storedTasks ? JSON.parse(storedTasks) : [];
+    });
+
+    // Sync to localStorage on change
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
 
     const addTask = (title, tags, status) => {
         const newTask = {
@@ -12,7 +20,7 @@ export const TaskProvider = ({ children }) => {
             title,
             tags,
             status,
-            createdAt: new Date(),
+            createdAt: new Date().toISOString(),
         };
         setTasks((prev) => [...prev, newTask]);
     };
