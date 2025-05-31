@@ -1,0 +1,41 @@
+/* Layout container */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main board area (below header) */
+.app_main {
+    flex: 1;
+    display: flex;
+    gap: var(--gap-lg);
+    padding: var(--gap-lg);
+    margin-left: 60px;
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+/* Horizontal scrollbar styling for the board */
+.app_main::-webkit-scrollbar {
+    height: 8px;
+}
+
+.app_main::-webkit-scrollbar-track {
+    background: var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.app_main::-webkit-scrollbar-thumb {
+    background-color: var(--color-text-light);
+    border-radius: var(--radius-sm);
+}
+
+/* Make form + footer always visible on light gray background */
+.app > header,
+.app > footer {
+    background-color: var(--color-surface);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    z-index: 10;
+}
+

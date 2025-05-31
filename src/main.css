@@ -1,0 +1,121 @@
+/* src/index.css */
+
+/* Import a Google Font (Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* ── LIGHT MODE VARIABLES ───────────────────────────────────────────────────── */
+:root {
+    --color-bg: #f5f7fa;
+    --color-surface: #ffffff;
+    --color-primary: #5a67d8; /* Indigo */
+    --color-primary-light: #7f85e8;
+    --color-accent: #38b2ac; /* Teal */
+    --color-on-primary: #ffffff;
+    --color-text: #2d3748; /* Dark gray */
+    --color-text-light: #718096; /* Medium gray */
+    --color-border: #e2e8f0; /* Light gray */
+    --color-shadow: rgba(0, 0, 0, 0.06);
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --gap-sm: 8px;
+    --gap-md: 16px;
+    --gap-lg: 24px;
+    --transition-fast: 0.15s ease-in-out;
+    --transition-medium: 0.25s ease-in-out;
+
+    /* Title gradient for Light mode: Indigo → Teal */
+    --title-gradient-start: var(--color-primary);
+    --title-gradient-end: var(--color-accent);
+
+    /* Underline accent for Light mode */
+    --title-underline: var(--color-accent);
+
+    /* Text‐shadow for Light mode */
+    --title-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* ── DARK MODE VARIABLES ────────────────────────────────────────────────────── */
+body.dark {
+    --color-bg: #1a202c; /* Very dark navy */
+    --color-surface: #2d3748; /* Dark gray/blue */
+    --color-primary: #b794f4; /* Light lavender */
+    --color-primary-light: #d6bcfa;
+    --color-accent: #81e6d9; /* Light teal */
+    --color-on-primary: #1a202c; /* Dark text on a pale button */
+    --color-text: #e2e8f0; /* Light gray text */
+    --color-text-light: #a0aec0; /* Medium gray text */
+    --color-border: #4a5568; /* Medium‐dark border */
+    --color-shadow: rgba(0, 0, 0, 0.4);
+
+    /* radii/spacings remain same */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --gap-sm: 8px;
+    --gap-md: 16px;
+    --gap-lg: 24px;
+    --transition-fast: 0.15s ease-in-out;
+    --transition-medium: 0.25s ease-in-out;
+
+    --title-gradient-start: var(--color-primary-light);
+    --title-gradient-end: var(--color-accent);
+
+    /* Underline accent in dark mode: slightly more vibrant */
+    --title-underline: var(--color-primary);
+
+    /* Stronger shadow for dark mode so glow is visible */
+    --title-shadow: rgba(0, 0, 0, 0.6);
+}
+
+/* ── BASE RESET & TYPOGRAPHY ───────────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Scrollbar styling (for WebKit browsers) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-text-light);
+    border-radius: var(--radius-sm);
+}

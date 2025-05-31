@@ -1,0 +1,93 @@
+/* src/components/TaskCard/TaskCard.css */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Task Card Container & Transitions
+   ──────────────────────────────────────────────────────────────────────────── */
+.task_card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 4px var(--color-shadow);
+    padding: var(--gap-md);
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.task_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.task_card:active {
+    cursor: grabbing;
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Task Header (Title + Delete Button)
+   ──────────────────────────────────────────────────────────────────────────── */
+.task_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task_title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+/* Delete Button Styles – using CSS variables for “error” colors */
+.task_delete {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--color-error, #e53e3e);
+    cursor: pointer;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.task_delete:hover {
+    color: var(--color-error-dark, #c53030);
+    transform: scale(1.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Tags & Meta Data
+   ──────────────────────────────────────────────────────────────────────────── */
+.task_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+}
+
+.task_tag {
+    background-color: var(--color-primary-light);
+    color: var(--color-on-primary);
+    border-radius: var(--radius-sm);
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color var(--transition-fast);
+}
+
+.task_tag:hover {
+    background-color: var(--color-primary);
+}
+
+.task_meta {
+    font-size: 11px;
+    color: var(--color-text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task_meta small {
+    font-style: italic;
+}

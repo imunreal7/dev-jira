@@ -1,0 +1,77 @@
+/* src/components/TaskColumn/TaskColumn.css */
+
+.task_column {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    transition: transform var(--transition-fast), border var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.task_column:hover {
+    transform: translateY(-4px);
+}
+
+/* Drag‐over highlight */
+.task_column.drag-over {
+    border-color: var(--color-accent);
+    background-color: rgba(56, 178, 172, 0.1); /* very light teal */
+}
+
+/* Default column title styling */
+.column_title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+    padding: var(--gap-md);
+    border-bottom: 2px solid var(--color-border);
+    background: var(--color-bg);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/* Column‐specific accenting */
+.task_column[data-column="todo"] .column_title {
+    background: linear-gradient(90deg, #795eca, #c1aaf8); /* Lavender → Violet */
+    color: #ffffff;
+    border-bottom-color: #8b5cf6;
+}
+
+.task_column[data-column="testing"] .column_title {
+    background: linear-gradient(90deg, #0480b5, #94dbfc); /* Sky‐blue → Blue */
+    color: #ffffff;
+    border-bottom-color: #0ea5e9;
+}
+
+.task_column[data-column="done"] .column_title {
+    background: linear-gradient(90deg, #048d5f, #93fcdb); /* Emerald → Teal‐green */
+    color: #ffffff;
+    border-bottom-color: #059669;
+}
+
+.task_column[data-column="next-focus"] .column_title {
+    background: linear-gradient(90deg, #cda505, #fad671); /* Yellow shades */
+    color: #ffffff;
+    border-bottom-color: #eab308;
+}
+
+.task_column[data-column="current-focus"] .column_title {
+    background: linear-gradient(90deg, #cf5905, #f9b38d); /* Orange shades */
+    color: #ffffff;
+    border-bottom-color: #ea580c;
+}
+
+/* Task list area below the title */
+.task_list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+    padding: var(--gap-md);
+}

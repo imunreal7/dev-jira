@@ -1,0 +1,25 @@
+/* Container for all columns */
+.task_board {
+    display: flex;
+    gap: var(--gap-lg);
+    padding-bottom: var(--gap-lg);
+    width: 100%;
+}
+
+/* Ensure horizontal scroll if columns overflow */
+.task_board {
+    overflow-x: auto;
+}
+
+.task_board::-webkit-scrollbar {
+    height: 8px;
+}
+
+.task_board::-webkit-scrollbar-track {
+    background: var(--color-border);
+}
+
+.task_board::-webkit-scrollbar-thumb {
+    background-color: var(--color-text-light);
+    border-radius: var(--radius-sm);
+}
